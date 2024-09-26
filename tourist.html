@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Website</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* Flex container to display images side by side */
+        .image-row {
+            display: flex;
+            justify-content: space-between; /* Equal spacing between images */
+            gap: 20px; /* Space between image containers */
+            flex-wrap: nowrap; /* Prevents wrapping of images */
+        }
+
+        .container {
+            position: relative;
+            width: 300px; /* Fixed width for each image */
+            height: auto;
+        }
+
+        .image-tourist {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media screen and (max-width: 960px) {
+            .image-row {
+                flex-direction: column; /* Stack images vertically on small screens */
+                align-items: center;
+            }
+
+            .main__content h1 {
+                font-size: 2rem;
+            }
+
+            .main__content p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">HOME</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div> 
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/profile.html" class="navbar__links" id="home-page">Profile</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/food.html" class="navbar__links" id="services-page">Food</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/tourist.html" class="navbar__links" id="tourist-page">Tourist</a> 
+                </li>
+                <li class="navbar__item">
+                    <a href="/hometown.html" class="navbar__links" id="hometown-page">Hometown</a> 
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>TOURIST PAGE</h1>
+                <p>Bogor is a charming city located in West Java, Known for its cool climate and lush greenery, Bogor has earned the nickname "Kota Hujan" or "Rain City" due to its frequent rainfall, especially during the rainy season.
+                <br>One of the most popular tourist attractions in Bogor is the Bogor Botanical Gardens (Kebun Raya Bogor), a sprawling garden complex that houses a wide variety of plant species from around the world. Established in 1817,
+                the gardens are one of the oldest botanical gardens in Southeast Asia and are a must-visit for nature lovers and plant enthusiasts.</p>
+
+                <!-- Flex container to hold images side by side -->
+                <div class="image-row">
+                    <!-- First image container with overlay -->
+                    <div class="container">
+                        <img src="images/Kebun3.jpg" alt="tourist Picture" class="image-tourist">
+                        <div class="overlay">
+                            <div class="text">Taman Soedjana Kassan</div>
+                        </div>
+                    </div>
+
+                    <!-- Second image container with overlay -->
+                    <div class="container">
+                        <img src="images/Kebun2.jpg" alt="tourist Picture" class="image-tourist">
+                        <div class="overlay">
+                            <div class="text">Ecodome</div>
+                        </div>
+                    </div>
+
+                    <!-- Third image container with overlay -->
+                    <div class="container">
+                        <img src="images/Kebun1.jpg" alt="tourist Picture" class="image-tourist">
+                        <div class="overlay">
+                            <div class="text">Kolam Teratai</div>
+                        </div>
+                    </div>
+
+                    <!-- Fourth image container with overlay -->
+                    <div class="container">
+                        <img src="images/Zoologi.jpg" alt="tourist Picture" class="image-tourist">
+                        <div class="overlay">
+                            <div class="text">Zoological Museum</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
